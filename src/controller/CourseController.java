@@ -3,10 +3,15 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import model.Course;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Observable;
 
@@ -67,11 +72,24 @@ public class CourseController {
         }
                 @FXML
                 void deleteCourse (ActionEvent event){
-
+                //odczyt zaznaczonego rekordu z tabeli i przypisanie jego id do zmiennej
+                Course c_deleted = tbl_course.getSelectionModel().getSelectedItem();
+                courses.remove(c_deleted);
+                //odswiezenie TableView
+                insertCoursesIntoTableView();
                 }
+                //przekazanie obiektu statycznego do innego widoku
+                static Course c_selected;
 
                 @FXML
-                void getCourse (ActionEvent event){
+                void getCourse (ActionEvent event)throws IOException {
+                        c_selected = tbl_course.getSelectionModel().getSelectedItem();
+                        //wywolanie nowego widoku
+                        Stage courseStage = new Stage();
+                        Parent root = FXMLLoader.load(getClass().getResource("/view/courseView.fxml"));
+                        courseStage.setTitle("Wybrany kurs");
+                        courseStage.setScene(new Scene(root));
+                        courseStage.show();
 
 
                 }
@@ -84,7 +102,7 @@ public class CourseController {
                         tbl_course.setItems(courses);
                 }
                 //---------------------------------------
-                //metoda ktora uruchamia
+                //metoda ktora uruchamia sie po zaladowaniu widoku jako pierwsza
 
         }
 
