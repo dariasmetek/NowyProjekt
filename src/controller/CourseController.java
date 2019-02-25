@@ -86,7 +86,7 @@ public class CourseController {
                         c_selected = tbl_course.getSelectionModel().getSelectedItem();
                         //wywolanie nowego widoku
                         Stage courseStage = new Stage();
-                        Parent root = FXMLLoader.load(getClass().getResource("/view/courseView.fxml"));
+                        Parent root = FXMLLoader.load(getClass().getResource("/view/logo.fxml"));
                         courseStage.setTitle("Wybrany kurs");
                         courseStage.setScene(new Scene(root));
                         courseStage.show();

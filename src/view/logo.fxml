@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="411.0" prefWidth="600.0" style="-fx-background-color: purple; -fx-background-color: ;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DetailCourseController">
+   <children>
+      <Label fx:id="lbl_course_name" layoutX="183.0" layoutY="51.0" prefHeight="53.0" prefWidth="234.0" text="Nazwa kursu" textFill="#f8f4f4">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="72.0" fitWidth="116.0" layoutX="34.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logo_sda.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="67.0" layoutY="104.0" text="Kategoria" textFill="#f5f2f2" />
+      <Label fx:id="lbl_course_cateogry" layoutX="82.0" layoutY="132.0" text="..." textFill="#f5eded" />
+      <Label layoutX="72.0" layoutY="160.0" text="Termin" textFill="#fcfafa" />
+      <Label fx:id="lbl_course_date" layoutX="82.0" layoutY="189.0" text="..." textFill="#f8f7f7" />
+      <Label layoutX="69.0" layoutY="218.0" text="Trener" textFill="#f5f0f0" />
+      <Label fx:id="lbl_course_trainer" layoutX="82.0" layoutY="241.0" text="..." textFill="#f2ecec" />
+      <TableView layoutX="276.0" layoutY="140.0" prefHeight="218.0" prefWidth="275.0">
+        <columns>
+          <TableColumn fx:id="col_partizip_name" prefWidth="134.0" text="Imie" />
+          <TableColumn fx:id="col_partizip_lastname" prefWidth="114.0" text="Nazwisko" />
+        </columns>
+      </TableView>
+      <Label fx:id="lbl_particip_name" layoutX="374.0" layoutY="104.0" text="Zapisani uczestnicy" textFill="#f8f4f4" />
+      <Label fx:id="lbl_partizip_lastname" layoutX="50.0" layoutY="287.0" prefHeight="33.0" prefWidth="170.0" text="dodaj imie" textFill="#f5eded" />
+      <Label layoutX="50.0" layoutY="316.0" prefHeight="25.0" prefWidth="184.0" text="dodaj nazwisko" textFill="#f5f2f2" />
+      <Button layoutX="107.0" layoutY="346.0" mnemonicParsing="false" text="Dodaj" />
+      <Button layoutX="106.0" layoutY="374.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="51.0" text="Usun" />
+   </children>
+</AnchorPane>
